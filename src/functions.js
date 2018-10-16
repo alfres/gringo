@@ -3,7 +3,7 @@
   .attr({
     x: 400,
     y: 89,
-	z: 100000
+	z: 3900
   })
   walking_hero._globalZ = 10
   
@@ -26,12 +26,32 @@ return walking_hero
   } 
 
 
-   
+   function gettor(){
+	   Crafty.audio.play("torsound",1,1)
+		var t = Crafty.e('2D, DOM, tor, SpriteAnimation, Motion')
+  .attr({
+    x: -200,
+    y: 89,
+	z: 4000,
+	 w: 100,
+	 h: 100
+  })
+  //t._globalZ = 10
+  
+  t.reel("walking", 300, [
+  [0, 0],
+  [0, 1],
+  [0, 2]
+]);
+t.animate("walking", -1)
+t.vx = 60
+t.bind("UpdateFrame", function() {if(t.x > 1200 ){this.destroy()}})
+  }   
    
    
    
    function resetall(){
-	  started = false; paused = false; vidas = 9; balas = 16 
+	  started = false; paused = false; vidas = 9; balas = 16 ; nivel = 1; viento = false; counter = 0
 	reloadlifes();reloadmuni();   
    }
    
@@ -51,6 +71,7 @@ return walking_hero
    Crafty('hero_walking').animate( "walking", -1)
    Crafty('fondo').each(function(){this.vx = -40})
    //Crafty.audio.play("drums",-1,1)
+    //gettor()
    } 
    
    else if (started == true && paused == true){
@@ -68,7 +89,7 @@ return walking_hero
 	Crafty("lifes").each(function(i) { this.destroy() });
 	if(vidas > 5) vidas = 5
     for (var i = 0; i < vidas; i++){
-  Crafty.e('2D, DOM, hero_idle, lifes').attr({x:(0 + (25 * i)), y:200, z:10000000, w: 20, h: 23 })
+  Crafty.e('2D, DOM, hero_idle, lifes').attr({x:(14 + (25 * i)), y:200, z:10000000, w: 20, h: 23 })
   }	
 }
 

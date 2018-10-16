@@ -1,4 +1,4 @@
-var started = false, paused = false, vidas = 3, balas = 6, nivel = 1
+var started = false, paused = false, vidas = 3, balas = 6, nivel = 1, viento = false, counter = 0
 
 Game = {
 	
@@ -14,21 +14,24 @@ Game = {
   Crafty.sprite("img/plumas.png", {plumas:[0,0,61,45]});
   Crafty.sprite("img/plumas2.png", {plumas2:[0,0,61,45]});
   Crafty.sprite("img/plumas3.png", {plumas3:[0,0,61,45]});
+  Crafty.sprite("img/plumas4.png", {plumas4:[0,0,61,25]});
   Crafty.sprite("img/caramelo1.png", {caramelo:[0,0,231,219]});
  Crafty.sprite("img/ic.png", {ic:[0,0,215,37]});
  Crafty.sprite("img/lanza.png", {spear:[0,0,120,48]});
   Crafty.sprite("img/burger.png", {burger:[0,0,34,31]});
   Crafty.sprite("img/dollars.png", {dollars:[0,0,32,21]});
+  Crafty.sprite("img/wind.png", {wind:[0,0,34,34]});
+  Crafty.sprite("img/craven.png", {craven:[0,0,92,71]});
 
 
   
  	 Crafty.e("2D, DOM, Color, platform, Persist")
   .color("grey")
-  .attr({x: 0, y: 201, w: 1000, h: 5 })
+  .attr({x: 0, y: 201, w: 1200, h: 5 })
   
    Crafty.e("2D, DOM, Color, platform2, Persist")
   .color("grey")
-  .attr({x: 0, y: 202, w: 1000, h: 5 })
+  .attr({x: 0, y: 202, w: 1200, h: 5 })
   
    Crafty.e("2D, DOM, Color, Text, barra, Persist")
   .color("coral")
@@ -39,9 +42,21 @@ Game = {
   //.color("grey")
   .attr({x: 0, y: 170, w: 1000, h: 5 , z: 4000000}) 
   
+  Crafty.e("2D, DOM, Color, Text, ciclos, Persist, HTML")
+  .color("coral")
+  .attr({x: 800, y: 200, w: 100, h: 50})
+  .textAlign('center').textFont({ size: '24px' }) 
   
+  
+  
+  Crafty.e("HTML, Persist")
+   .attr({x:900, y:220, w:100, h:100})
+   .append("<a href='https://github.com/alfres/gringo'>code</a>");
    var game_assets = {
 	       "audio": {
+		"reload": "sounds/reload.mp3",	   
+		"squawk": "sounds/squawk.mp3",	   
+	    "torsound": "sounds/windsound.mp3",
 		"Drink": "sounds/Drink.mp3",	   
 		"drums": "sounds/Wardrums.mp3",	   
 	    "woosh3": "sounds/woosh3.mp3",
@@ -60,9 +75,22 @@ Game = {
         hero_sitting: [0, 4]
 		
       }
+    },
+	
+	
+    "img/tornado.png": {
+      tile: 170,
+      tileh: 96,
+      map: {
+        tor: [0, 0]
+		
+      }
     }
 	
   }
+	
+  
+ 
 };
  
 Crafty.load(game_assets, function(){Crafty.scene("portada")});

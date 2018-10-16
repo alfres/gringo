@@ -31,8 +31,8 @@ Crafty.defineScene("gameover", function() {
 Crafty.unbind('KeyDown') 
 Crafty.unbind('KeyUp')
 //Crafty.e("2D, DOM, Color").attr({x:0, y:0, z: 10000, w:1000, h:200}).color("#BC2700")	
-Crafty.e("2D, DOM, Image").attr({w: 1000, h: 200}).image("img/woodTexture.png", "repeat")
-Crafty.e("2D, DOM, ic").attr({x:210, y:50, z: 10001, w:580, h:100})	
+Crafty.e("2D, DOM, Image").attr({w: 1200, h: 200}).image("img/woodTexture.png", "repeat")
+Crafty.e("2D, DOM, ic").attr({x:230, y:50, z: 10001, w:580, h:100})	
 .uniqueBind('KeyDown', function(event){
 	if(event.key === 8 || event.key === Crafty.keys.BACKSPACE){
 		resetall()
