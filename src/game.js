@@ -49,9 +49,7 @@ Game = {
   
   
   
-  Crafty.e("HTML, Persist")
-   .attr({x:900, y:220, w:100, h:100})
-   .append("<a href='https://github.com/alfres/gringo'>code</a>");
+ 
    var game_assets = {
 	       "audio": {
 		"reload": "sounds/reload.mp3",	   
