@@ -1,4 +1,73 @@
-  function getsprite(){
+ function loadbuton(){
+ Crafty.multitouch(true);
+ Crafty.e("2D, DOM, boton, Touch, Persist")
+.attr({x: 430, y: 200, z: 4000000, w: 115, h: 60 }).origin("center")
+.attach(Crafty.e("2D, DOM, Text, bot, Persist").attr({x: 430, y: 214, z: 4000001, w: 115, h: 60 }).textAlign('center').textFont({ size: '24px' }).text('start'))
+.uniqueBind('TouchOver', function(TouchPoint){
+    this.visible = false
+	Crafty("bot").each(function(i) { this.visible = false })
+	loadarrows()
+	plaipause()
+	
+  })
+ } 
+ 
+ 
+ function loadarrows(){
+	 
+
+	 
+	 Crafty.e("2D, DOM, tucson, Touch, Draggable")
+.attr({x: 530, y: 280, z: 4000000, w: 60, h: 30 }).origin("center")
+.bind('TouchOver', function(TouchPoint){
+   var evt = new KeyboardEvent('keydown', {'keyCode':39, 'which':39});
+document.dispatchEvent (evt);
+  })
+.bind('TouchOut', function(TouchPoint){
+   var evt = new KeyboardEvent('keyup', {'keyCode':39, 'which':39});
+document.dispatchEvent (evt);
+  }) 
+
+  	 Crafty.e("2D, DOM, tucson, Touch, Draggable")
+.attr({x: 360, y: 280, z: 4000000, w: 60, h: 30 }).origin("center").flip('X')
+.bind('TouchOver', function(TouchPoint){
+   var evt = new KeyboardEvent('keydown', {'keyCode':37, 'which':37});
+document.dispatchEvent (evt);
+  })
+.bind('TouchOut', function(TouchPoint){
+   var evt = new KeyboardEvent('keyup', {'keyCode':37, 'which':37});
+document.dispatchEvent (evt);
+  }) 
+  
+  
+  	 Crafty.e("2D, DOM, tucson, Touch, Draggable")
+.attr({x: 445, y: 230, z: 4000000, w: 60, h: 30 }).origin("center")
+.bind('TouchOver', function(TouchPoint){
+   var evt = new KeyboardEvent('keydown', {'keyCode':38, 'which':38});
+document.dispatchEvent (evt);
+  })
+.bind('TouchOut', function(TouchPoint){
+   var evt = new KeyboardEvent('keyup', {'keyCode':38, 'which':38});
+document.dispatchEvent (evt);
+  }) 
+.rotation = -90
+
+  	 Crafty.e("2D, DOM, tucson, Touch, Draggable")
+.attr({x: 445, y: 330, z: 4000000, w: 60, h: 30 }).origin("center")
+.bind('TouchOver', function(TouchPoint){
+   var evt = new KeyboardEvent('keydown', {'keyCode':40, 'which':40});
+document.dispatchEvent (evt);
+  })
+.bind('TouchOut', function(TouchPoint){
+   var evt = new KeyboardEvent('keyup', {'keyCode':40, 'which':40});
+document.dispatchEvent (evt);
+  }) 
+.rotation = 90  
+ }
+
+
+
+ function getsprite(){
 		var walking_hero = Crafty.e('2D, DOM, hero_walking, SpriteAnimation, Motion')
   .attr({
     x: 400,
@@ -95,7 +164,7 @@ t.bind("UpdateFrame", function() {if(t.x > 1200 ){this.destroy()}})
 
 function reloadmuni(){
 	Crafty("municion").each(function(i) { this.destroy() });
-	if(balas > 6) balas = 6
+	 balas = 6
       for (var i = 0; i < balas; i++){
   Crafty.e('2D, DOM, caramelo, municion').attr({x:(200 + (18 * i)), y:205, z:10000000, w: 15, h: 16 })
   }

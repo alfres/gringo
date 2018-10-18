@@ -7,7 +7,7 @@ Crafty.c('fondo', {
    this._children.forEach(function(i) { i.destroy() })
    counter++
    if(counter > 100){counter = 0; nivel++}
-   Crafty("ciclos").text('ciclos ' + counter)
+  // Crafty("ciclos").text('ciclos ' + counter)
   // this.detach('indio, indiob,  indio2, indio2b, indio3, indio3b, indio4, bush, macdo')
 
 //if(Crafty.math.randomNumber(0,6) < nivel)addindi1b(this)
@@ -213,12 +213,12 @@ Crafty.c('indio3', {
 Crafty.c('hacha', {
 	init: function( ) {
 		this.requires('2D, DOM, Color, Motion, Gravity, Collision');
-		this.attr({z: 11000, w:3, h:3})
+		this.attr({z: 3800, w:3, h:3})
 		//this.color('green')
 		this.vx = -300
 		this.vy = -380
 		this.origin("center")
-		this.attach(Crafty.e('2D, DOM, axe').attr({x:(this.x - 1), y:(this.y - 5 ),z: 11001, w:18, h:27}))
+		this.attach(Crafty.e('2D, DOM, axe').attr({x:(this.x - 1), y:(this.y - 5 ),z: 3800, w:18, h:27}))
 		//this.rotation = 45
 		var fgirar = function() {
 			if(this.motionDelta().y > 0){
@@ -247,12 +247,12 @@ Crafty.c('hacha', {
 Crafty.c('hacha2', {
 	init: function( ) {
 		this.requires('2D, DOM, Color, Motion, Gravity, Collision');
-		this.attr({z: 11000, w:3, h:3})
+		this.attr({z: 3800, w:3, h:3})
 		//this.color('white')
 		this.vx = 200
 		this.vy = -380
 		this.origin("center")
-		this.attach(Crafty.e('2D, DOM, axe').attr({x:(this.x + 3), y:(this.y + 1 ),z: 11001, w:18, h:27}).flip("X"))
+		this.attach(Crafty.e('2D, DOM, axe').attr({x:(this.x + 3), y:(this.y + 1 ),z: 3800, w:18, h:27}).flip("X"))
 		//this.rotation = 45
 		var fgirar = function() {
 			if(this.motionDelta().y > 0){
@@ -283,12 +283,12 @@ Crafty.c('flecha', {
 	init: function( ) {
 		this.requires('2D, DOM, Color, Motion, Gravity, Collision');
 		//this.color('red')
-		this.attr({z: 4000000, w:3, h:3})
+		this.attr({z: 3800, w:3, h:3})
 		this.vx = -385
 		this.vy = -120
 		this.origin("center")
 		this.gravityConst(300)
-		this.attach(Crafty.e('2D, DOM, arrow').attr({x:(this.x - 3), y:(this.y + 1 ),z: 11001, w:38, h:7}))
+		this.attach(Crafty.e('2D, DOM, arrow').attr({x:(this.x - 3), y:(this.y + 1 ),z: 3800, w:38, h:7}))
 		//this.rotation = 45
 		var fgirar = function() {
 			if(this.motionDelta().y > 0){
@@ -320,12 +320,12 @@ Crafty.c('flechab', {
 	init: function( ) {
 		this.requires('2D, DOM, Color, Motion, Gravity, Collision');
 		//this.color('white')
-		this.attr({z: 4000000, w:3, h:3})
+		this.attr({z: 3800, w:3, h:3})
 		this.vx = 365
 		this.vy = -120
 		this.origin("center")
 		this.gravityConst(300)
-		this.attach(Crafty.e('2D, DOM, arrow').attr({x:(this.x + 10), y:(this.y - 2 ),z: 11001, w:38, h:7}).flip("X"))
+		this.attach(Crafty.e('2D, DOM, arrow').attr({x:(this.x + 10), y:(this.y - 2 ),z: 3800, w:38, h:7}).flip("X"))
 		this.rotation = 45
 		var fgirar = function() {
 			if(this.motionDelta().y > 0){
@@ -357,12 +357,12 @@ Crafty.c('lanzab', {
 	init: function( ) {
 		this.requires('2D, DOM, Color, Motion, Gravity, Collision');
 		//this.color('red')
-		this.attr({z: 4000, w:3, h:3})
+		this.attr({z: 3800, w:3, h:3})
 		this.vx = -400
 		this.vy = 40
 		this.origin("center")
 		this.gravityConst(100)
-		this.attach(Crafty.e('2D, DOM, spear').attr({x:(this.x - 1), y:(this.y - 13 ),z: 11001, w:48, h:18}).origin("middle left"))
+		this.attach(Crafty.e('2D, DOM, spear').attr({x:(this.x - 1), y:(this.y - 13 ),z: 3800, w:48, h:18}).origin("middle left"))
 		//this.rotation = 45
 	
 		this.attr({alreadyTouched: {} })
@@ -386,13 +386,13 @@ Crafty.c('lanza', {
 	init: function( ) {
 		this.requires('2D, DOM, Color, Motion, Gravity, Collision');
 		//this.color('red')
-		this.attr({z: 4000, w:3, h:3})
+		this.attr({z: 3800, w:3, h:3})
 		this.vx = 400
 		this.vy = 40
 		this.origin("middle right")
 		this.gravityConst(90)
 		
-		this.attach(Crafty.e('2D, DOM, spear').attr({x:(this.x + 7), y:(this.y - 12 ),z: 11001, w:48, h:18}).flip("X"))
+		this.attach(Crafty.e('2D, DOM, spear').attr({x:(this.x + 7), y:(this.y - 12 ),z: 3800, w:48, h:18}).flip("X"))
 		this.gravity("platform2")
 	
 		this.attr({alreadyTouched: {} })
@@ -416,6 +416,7 @@ Crafty.c('caramel', {
 	init: function( ) {
 		this.requires('2D, DOM, Color, Motion, Gravity, Collision');
 		this.attr({z: 11000, w:8, h:8})
+		
 		//this.color('red')
 		this.vx = 200
 		this.vy = -90
