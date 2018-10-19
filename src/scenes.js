@@ -14,7 +14,7 @@ Crafty("fondo, vaquero").each(function(i) { this.destroy() });
 
  
  if (navigator.appVersion.search("Android") != -1) {
-Crafty("tucson").each(function(i) { this.visible = false })	 
+Crafty("tucsonAndroid").each(function(i) { this.visible = false })	 
 Crafty("boton").each(function(i) {
 	this.visible = true 
 	this.unbind('TouchOver');
@@ -51,7 +51,7 @@ resetall()
  
 
 Crafty.defineScene("gameover", function() {
-	started = false; paused = false; vidas = 9; balas = 6; nivel = 1;
+	started = false; paused = false; vidas = 9; balas = 6; nivel = 1; counter = 0; viento = false;
 Crafty.unbind('KeyDown') 
 Crafty.unbind('KeyUp')
 //Crafty.e("2D, DOM, Color").attr({x:0, y:0, z: 10000, w:1000, h:200}).color("#BC2700")	

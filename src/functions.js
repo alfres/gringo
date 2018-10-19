@@ -17,8 +17,8 @@
 	 
 
 	 
-	 Crafty.e("2D, DOM, tucson, Touch, Draggable")
-.attr({x: 530, y: 280, z: 4000000, w: 60, h: 30 }).origin("center")
+	 Crafty.e("2D, DOM, tucson, Touch, tucsonAndroid")
+.attr({x: 530, y: 260, z: 4000000, w: 60, h: 30 }).origin("center")
 .bind('TouchOver', function(TouchPoint){
    var evt = new KeyboardEvent('keydown', {'keyCode':39, 'which':39});
 document.dispatchEvent (evt);
@@ -28,8 +28,8 @@ document.dispatchEvent (evt);
 document.dispatchEvent (evt);
   }) 
 
-  	 Crafty.e("2D, DOM, tucson, Touch, Draggable")
-.attr({x: 360, y: 280, z: 4000000, w: 60, h: 30 }).origin("center").flip('X')
+  	 Crafty.e("2D, DOM, tucson, Touch, tucsonAndroid")
+.attr({x: 360, y: 260, z: 4000000, w: 60, h: 30 }).origin("center").flip('X')
 .bind('TouchOver', function(TouchPoint){
    var evt = new KeyboardEvent('keydown', {'keyCode':37, 'which':37});
 document.dispatchEvent (evt);
@@ -40,8 +40,8 @@ document.dispatchEvent (evt);
   }) 
   
   
-  	 Crafty.e("2D, DOM, tucson, Touch, Draggable")
-.attr({x: 445, y: 230, z: 4000000, w: 60, h: 30 }).origin("center")
+  	 Crafty.e("2D, DOM, tucson, Touch, tucsonAndroid")
+.attr({x: 445, y: 210, z: 4000000, w: 60, h: 30 }).origin("center")
 .bind('TouchOver', function(TouchPoint){
    var evt = new KeyboardEvent('keydown', {'keyCode':38, 'which':38});
 document.dispatchEvent (evt);
@@ -52,8 +52,8 @@ document.dispatchEvent (evt);
   }) 
 .rotation = -90
 
-  	 Crafty.e("2D, DOM, tucson, Touch, Draggable")
-.attr({x: 445, y: 330, z: 4000000, w: 60, h: 30 }).origin("center")
+  	 Crafty.e("2D, DOM, tucson, Touch, tucsonAndroid")
+.attr({x: 445, y: 310, z: 4000000, w: 60, h: 30 }).origin("center")
 .bind('TouchOver', function(TouchPoint){
    var evt = new KeyboardEvent('keydown', {'keyCode':40, 'which':40});
 document.dispatchEvent (evt);
@@ -121,7 +121,8 @@ t.bind("UpdateFrame", function() {if(t.x > 1200 ){this.destroy()}})
    
    function resetall(){
 	  started = false; paused = false; vidas = 9; balas = 16 ; nivel = 1; viento = false; counter = 0
-	reloadlifes();reloadmuni();   
+	reloadlifes();reloadmuni();
+	Crafty("tuc").text('tucson  ' + Math.floor(100 - (counter / 4)))
    }
    
    function plaipause(){

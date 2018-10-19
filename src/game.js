@@ -44,7 +44,15 @@ Crafty.sprite("img/button.png", {boton:[0,0,115,60]});
   //.color("grey")
   .attr({x: 0, y: 170, w: 1000, h: 5 , z: 4000000}) 
   
- 
+  Crafty.e("2D, DOM, tucson, Persist")
+  //.color("grey")
+  .attr({x: 840, y: 210, w: 100, h: 50 , z: 40000000})  
+  
+   Crafty.e("2D, DOM, Text, tuc, Persist")
+  //.color("grey")
+  .attr({x: 840, y: 222, w: 100, h: 50 , z: 40000001}) 
+.textAlign('center').textFont({ size: '14px' }).text('tucson  ' + Math.floor(100 - (counter / 4)))
+
  if (navigator.appVersion.search("Android") != -1) {
 loadbuton()
 Crafty("barra").each(function(i) { this.visible = false })

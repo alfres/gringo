@@ -6,8 +6,9 @@ Crafty.c('fondo', {
    if(this.x < -400){ this.x = 1200
    this._children.forEach(function(i) { i.destroy() })
    counter++
-   if(counter > 100){counter = 0; nivel++}
-  // Crafty("ciclos").text('ciclos ' + counter)
+   if(counter > (100 * nivel)){ nivel++}
+   if(counter > (400)){ window.location.assign("https://en.wikipedia.org/wiki/Tucson,_Arizona#History")}
+   Crafty("tuc").text('tucson  ' + Math.floor(100 - (counter / 4)))
   // this.detach('indio, indiob,  indio2, indio2b, indio3, indio3b, indio4, bush, macdo')
 
 //if(Crafty.math.randomNumber(0,6) < nivel)addindi1b(this)
@@ -102,8 +103,8 @@ Crafty.c('pasta', {
 	init: function( ) {
 
   this.requires('2D, DOM, dollars, Collision, Gravity')
-  this.attr({x:Crafty.math.randomNumber(350,550), y: 0, z: 4000000, w: 16, h: 11})
-  this.gravityConst(120)
+  this.attr({x:Crafty.math.randomNumber(350,550), y: -5, z: 4000000, w: 16, h: 11})
+  this.gravityConst(115)
   this.gravity("platform2")
   this.origin("center")
   this.onHit('platform' , function(hitDatas) {this.destroy() })
