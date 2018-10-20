@@ -175,7 +175,7 @@ function comer(thi){
 	thi.destroy()
 	if(vidas < 5){
 		vidas++
-		Crafty.e('2D, DOM, hero_idle, lifes').attr({x:(0 + (25 * (vidas- 1))), y:200, z:10000000, w: 20, h: 23 })
+		Crafty.e('2D, DOM, hero_idle, lifes').attr({x:(14 + (25 * (vidas- 1))), y:200, z:10000000, w: 20, h: 23 })
 		}
 }
 
