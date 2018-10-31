@@ -11,18 +11,15 @@ Crafty.c('fondo', {
    Crafty("tuc").text('tucson  ' + Math.floor(100 - (counter / 4)))
   // this.detach('indio, indiob,  indio2, indio2b, indio3, indio3b, indio4, bush, macdo')
 
-//if(Crafty.math.randomNumber(0,6) < nivel)addindi1b(this)
-//if(Crafty.math.randomNumber(0,6) < nivel)addindi1(this)
-//if(Crafty.math.randomNumber(0,6) < nivel)addindi2(this)
-//if(Crafty.math.randomNumber(0,6) < nivel)addindi2b(this)
-if(Crafty.math.randomNumber(0,8) < nivel)addindi3(this)
-if(Crafty.math.randomNumber(0,8) < nivel)addindi4(this)
-if(Crafty.math.randomNumber(0,8) < nivel)addindi5(this)
-if(Crafty.math.randomNumber(0,8) < nivel)addindi6(this)
-//this.attach(Crafty.e('bush').attr({x:(this.x ), y:(this.y + 155)}))
-if(Crafty.math.randomNumber(0,6) < nivel)var f =  Crafty.math.randomElementOfArray([addindi1, addindi1b])(this)
-if(Crafty.math.randomNumber(0,6) < nivel)var f2 = Crafty.math.randomElementOfArray([addindi2, addindi2b])(this)
-//if(nivel == 1){this.attach(Crafty.e('bush').attr({x:(this.x ), y:(this.y + 155)})); nivel = 9}
+
+if(Crafty.math.randomNumber(0,12) < nivel)addindi3(this)
+if(Crafty.math.randomNumber(0,12) < nivel)addindi4(this)
+if(Crafty.math.randomNumber(0,12) < nivel)addindi5(this)
+if(Crafty.math.randomNumber(0,12) < nivel)addindi6(this)
+
+if(Crafty.math.randomNumber(0,12) < nivel)var f =  Crafty.math.randomElementOfArray([addindi1, addindi1b])(this)
+if(Crafty.math.randomNumber(0,12) < nivel)var f2 = Crafty.math.randomElementOfArray([addindi2, addindi2b])(this)
+
 if(Crafty.math.randomNumber(0,4) < nivel)this.attach(Crafty.e('2D, DOM, craven').attr({x:(this.x -111), y:(this.y + 78), z: 3000, w:18, h:14}))
 
 this.attach(Crafty.e('pasta'))
@@ -34,7 +31,7 @@ this.attach(Crafty.e('pasta'))
 //addindi5(this)
 //addindi6(this)
 //if(Crafty.math.randomNumber(0,8) < (nivel *2))this.attach(Crafty.e('bush').attr({x:(this.x ), y:(this.y + 155)}))
-if(Crafty.math.randomNumber(0,8) < nivel)this.attach(Crafty.e('macdo').attr({x:(this.x + Crafty.math.randomElementOfArray([92, 142, 1, 300])), y:(this.y + Crafty.math.randomElementOfArray([92, 142]))}))
+if(Crafty.math.randomNumber(0,7) < nivel)this.attach(Crafty.e('macdo').attr({x:(this.x + Crafty.math.randomElementOfArray([92, 142, 1, 300])), y:(this.y + Crafty.math.randomElementOfArray([92, 142]))}))
 }
    
 
@@ -50,7 +47,7 @@ this.vx = 0
 Crafty.c('vaquero', {
 	init: function( ) {
 
-  this.requires('2D, DOM, Color, Twoway, Gravity')
+  this.requires('2D, DOM, Twoway, Gravity')
   this.twoway(60, 169)
   this.gravity("camino")
   this.attr({x: 430, y: 116, z: 4000000, w: 18, h: 58 })
@@ -84,7 +81,7 @@ Crafty.c('macdo', {
 		this.checkHits("boca")
 		this.origin("center")
 		this.vx = -150
-		this.ax = -50
+		this.ax = -40
 		this.onHit('boca' , function(hitDatas) {
 			//alert()
 			if(this.alreadyTouched['vaquero'] !== true){
@@ -285,7 +282,7 @@ Crafty.c('flecha', {
 		this.requires('2D, DOM, Color, Motion, Gravity, Collision');
 		//this.color('red')
 		this.attr({z: 3800, w:3, h:3})
-		this.vx = -385
+		this.vx = -378
 		this.vy = -120
 		this.origin("center")
 		this.gravityConst(300)
@@ -322,7 +319,7 @@ Crafty.c('flechab', {
 		this.requires('2D, DOM, Color, Motion, Gravity, Collision');
 		//this.color('white')
 		this.attr({z: 3800, w:3, h:3})
-		this.vx = 365
+		this.vx = 360
 		this.vy = -120
 		this.origin("center")
 		this.gravityConst(300)
